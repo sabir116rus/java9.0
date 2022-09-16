@@ -6,8 +6,8 @@ public class RadioTest {
 
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/nextStation.csv")
-    public void nextTest(int setStat, int actual) {
-        Radio radio = new Radio();
+    public void nextTest(int amountStation, int setStat, int actual) {
+        Radio radio = new Radio(amountStation);
         radio.setStation(setStat);
         radio.next();
         int expected = radio.getStation();
@@ -16,8 +16,8 @@ public class RadioTest {
 
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/prevStation.csv")
-    public void prevTest(int setStat, int actual) {
-        Radio radio = new Radio();
+    public void prevTest(int amountStation, int setStat, int actual) {
+        Radio radio = new Radio(amountStation);
         radio.setStation(setStat);
         radio.prev();
         int expected = radio.getStation();
@@ -43,6 +43,4 @@ public class RadioTest {
         int expected = radio.getVolume();
         Assertions.assertEquals(expected, actual);
     }
-
-
 }
