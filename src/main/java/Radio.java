@@ -8,18 +8,23 @@ public class Radio {
 
     public void setStation(int station) {
         this.station = station;
+        return;
     }
 
     public void next() {
         if (station < 9) {
             station = station + 1;
-        } else station = 0;
+        } else {
+            station = 0;
+        }
     }
 
     public void prev() {
         if (station > 0) {
             station = station - 1;
-        } else station = 9;
+        } else {
+            station = 9;
+        }
     }
 
     public int getVolume() {
@@ -28,6 +33,7 @@ public class Radio {
 
     public void setVolume(int volume) {
         this.volume = volume;
+        return;
     }
 
 
